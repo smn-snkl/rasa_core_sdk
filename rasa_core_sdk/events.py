@@ -14,12 +14,14 @@ EventType = Dict[Text, Any]
 # noinspection PyPep8Naming
 def UserUttered(text,
                 parse_data=None,
-                timestamp=None):
+                timestamp=None,
+                input_channel=None):
     return {
         "event": "user",
         "timestamp": timestamp,
         "text": text,
         "parse_data": parse_data,
+        "input_channel": input_channel
     }
 
 
@@ -144,10 +146,11 @@ def AgentUttered(text=None, data=None, timestamp=None):
 
 
 # noinspection PyPep8Naming
-def Form(name, timestamp=None):
+def Form(name, trigger_message=None, timestamp=None):
     return {
         "event": "form",
         "name": name,
+        "trigger_message": trigger_message,
         "timestamp": timestamp,
     }
 

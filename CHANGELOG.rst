@@ -16,6 +16,13 @@ Added
 - add optional `validate_{slot}` methods to `FormAction`
 - forms can now be deactivated during the validation function by returning
   `self.deactivate()`
+- ``FormAction.from_trigger_intent`` allows slot extraction from message
+  triggering the FormAction
+- ``Tracker.active_form`` now includes ``trigger_message`` attribute to allow
+  access to message triggering the form
+- Function to get latest input channel from the tracker with
+  ``tracker.get_latest_input_channel()``
+- Abstract Actions can now be subclassed
 
 Removed
 -------
